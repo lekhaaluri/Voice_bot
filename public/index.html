@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>My Voice Interview Bot</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f3f4f6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+    .card {
+      background: white;
+      padding: 24px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      max-width: 480px;
+      width: 100%;
+    }
+    h1 {
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+      text-align: center;
+    }
+    p.subtitle {
+      font-size: 0.9rem;
+      color: #6b7280;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    #status {
+      font-size: 0.85rem;
+      color: #4b5563;
+      margin-bottom: 8px;
+      text-align: center;
+    }
+    #userText, #botText {
+      background: #f9fafb;
+      padding: 12px;
+      border-radius: 8px;
+      min-height: 40px;
+      font-size: 0.95rem;
+      white-space: pre-wrap;
+    }
+    .label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #6b7280;
+      margin-top: 12px;
+      margin-bottom: 4px;
+    }
+    .mic-btn {
+      margin: 16px auto 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 70px;
+      height: 70px;
+      border-radius: 999px;
+      border: none;
+      background: #2563eb;
+      color: white;
+      font-size: 1.6rem;
+      cursor: pointer;
+      transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.2s;
+      box-shadow: 0 10px 20px rgba(37,99,235,0.35);
+    }
+    .mic-btn.listening {
+      background: #dc2626;
+      box-shadow: 0 10px 20px rgba(220,38,38,0.35);
+      transform: scale(1.05);
+    }
+    .mic-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      box-shadow: none;
+      transform: none;
+    }
+    .small {
+      font-size: 0.8rem;
+      color: #9ca3af;
+      text-align: center;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>My Voice Interview Bot</h1>
+    <p class="subtitle">
+      Click the mic, ask your question (e.g. “What’s your life story?”) and I’ll answer as myself.
+    </p>
+
+    <div id="status">Ready. Click the mic to start speaking.</div>
+
+    <div class="label">You said:</div>
+    <div id="userText"></div>
+
+    <div class="label">Bot (you) answered:</div>
+    <div id="botText"></div>
+
+    <button id="micButton" class="mic-btn">
+      
+    </button>
+    <div class="small">
+      Works best in Chrome / Edge with microphone access.
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
